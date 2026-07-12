@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mithra U — Portfolio</title>
+<meta name="description" content="Mithra U — Computer Science Engineering Student, Software Engineer, Full Stack Developer">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Sora:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<canvas id="starfield"></canvas>
+<div id="cursor-glow"></div>
+<div id="cursor-trail"></div>
+<div class="scroll-progress"><div class="scroll-progress-bar" id="scrollProgressBar"></div></div>
+
+<div class="cosmic-bg" aria-hidden="true">
+  <div class="blackhole"></div>
+  <div class="nebula nebula-1"></div>
+  <div class="nebula nebula-2"></div>
+  <div class="nebula nebula-3"></div>
+  <div class="galaxy-spiral"></div>
+  <div class="aurora aurora-1"></div>
+  <div class="aurora aurora-2"></div>
+  <div class="constellations" id="constellations"></div>
+  <div class="comet comet-1"></div>
+  <div class="comet comet-2"></div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="#home" class="logo">
+      <span class="logo-mark">MU</span>
+    </a>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode">
+        <i class="fa-solid fa-moon"></i>
+      </button>
+      <button id="menuToggle" class="menu-toggle" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero" id="home">
+
+  <!-- floating space objects -->
+  <div class="floaters" aria-hidden="true">
+    <div class="floater rocket-float"><i class="fa-solid fa-rocket"></i></div>
+    <div class="floater satellite-float"><i class="fa-solid fa-satellite"></i></div>
+    <div class="floater station-float"><i class="fa-solid fa-satellite-dish"></i></div>
+    <div class="floater ufo-float"><i class="fa-solid fa-meteor"></i></div>
+    <div class="floater meteor-float-1"></div>
+    <div class="floater meteor-float-2"></div>
+  </div>
+
+  <div class="hero-inner">
+
+    <!-- LEFT -->
+    <div class="hero-left" data-aos="fade-right" data-aos-duration="900">
+      <p class="hero-greeting">Hello <span class="wave">👋</span></p>
+      <h1 class="hero-name">Hi, I'm <span class="highlight">Mithra U</span></h1>
+      <p class="hero-role">Computer Science Engineering Student</p>
+
+      <div class="hero-typing">
+        <span class="typing-prefix">I am a</span>
+        <span id="typed-text" class="typed-text"></span>
+        <span class="cursor-blink">|</span>
+      </div>
+
+      <p class="hero-desc">
+        I'm Mithra U, a Computer Science Engineering student passionate about creating
+        innovative software, modern websites, and immersive digital experiences.
+        I enjoy transforming creative ideas into real-world applications through
+        technology and continuous learning.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#projects" class="btn btn-primary ripple">
+          <i class="fa-solid fa-rocket"></i> Explore My Projects
+        </a>
+        <a href="#contact" class="btn btn-outline ripple">
+          <i class="fa-solid fa-envelope"></i> Contact Me
+        </a>
+      </div>
+
+      <!-- Quick Highlights -->
+      <div class="highlights">
+        <div class="highlight-card" data-aos="fade-up" data-aos-delay="0">
+          <span class="hc-icon">✨</span>
+          <span class="hc-text"><strong>5+</strong> Projects</span>
+        </div>
+        <div class="highlight-card" data-aos="fade-up" data-aos-delay="100">
+          <span class="hc-icon">🏆</span>
+          <span class="hc-text"><strong>20+</strong> Certificates</span>
+        </div>
+        <div class="highlight-card" data-aos="fade-up" data-aos-delay="200">
+          <span class="hc-icon">💻</span>
+          <span class="hc-text">HTML · CSS · Java · JS · C · C++</span>
+        </div>
+        <div class="highlight-card" data-aos="fade-up" data-aos-delay="300">
+          <span class="hc-icon">☁️</span>
+          <span class="hc-text">Cloud Computing</span>
+        </div>
+      </div>
+
+      <!-- Social -->
+      <div class="social-icons">
+        <a href="#" class="social-icon" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="#" class="social-icon" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="#" class="social-icon" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      </div>
+
+      <p class="tagline">Exploring the Universe of Code, One Project at a Time.</p>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="hero-right" data-aos="fade-left" data-aos-duration="900">
+      <div class="orbit-stage">
+
+        <!-- orbit rings -->
+        <div class="orbit-ring ring-1"></div>
+        <div class="orbit-ring ring-2"></div>
+        <div class="orbit-ring ring-3"></div>
+
+        <!-- orbiting bodies -->
+        <div class="orbiter orbiter-1"><div class="body-earth" title="Earth"></div></div>
+        <div class="orbiter orbiter-2"><div class="body-moon" title="Moon"></div></div>
+        <div class="orbiter orbiter-3"><div class="body-saturn" title="Saturn"><div class="saturn-ring"></div></div></div>
+        <div class="orbiter orbiter-4"><div class="body-sat"><i class="fa-solid fa-satellite"></i></div></div>
+        <div class="orbiter orbiter-5"><div class="tiny-star"></div></div>
+        <div class="orbiter orbiter-6"><div class="tiny-star"></div></div>
+
+        <!-- central profile -->
+        <div class="profile-wrap">
+          <div class="profile-glow"></div>
+          <div class="profile-ring spin-slow"></div>
+          <div class="profile-ring spin-rev"></div>
+          <div class="profile-frame">
+            <div class="profile-initials">MU</div>
+          </div>
+          <div class="profile-particles" id="profileParticles"></div>
+        </div>
+
+        <!-- astronaut -->
+        <div class="astronaut" aria-hidden="true">
+          <i class="fa-solid fa-user-astronaut"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <a href="#about" class="scroll-indicator">
+    <div class="rocket-scroll"><i class="fa-solid fa-rocket"></i></div>
+    <span>Launch into My Portfolio</span>
+  </a>
+
+</header>
+
+<!-- ABOUT -->
+<section class="section about-section" id="about">
+  <div class="section-inner">
+    <p class="section-eyebrow">01 · Mission Log</p>
+    <h2 class="section-title">About Me</h2>
+
+    <div class="about-grid">
+      <div class="about-text" data-aos="fade-right">
+        <p>
+          I'm Mithra U, a Computer Science Engineering student who treats every project
+          like a small mission — plan the trajectory, build the systems, and launch
+          something real. I'm drawn to the point where clean code, thoughtful design,
+          and genuine curiosity meet.
+        </p>
+        <p>
+          Outside of coursework, I spend my time exploring full-stack development,
+          experimenting with cloud platforms, and picking apart new frameworks just to
+          see how they tick. I believe good engineering is equal parts logic and
+          imagination.
+        </p>
+        <div class="about-stats">
+          <div class="stat-card">
+            <span class="stat-num">5+</span>
+            <span class="stat-label">Projects Shipped</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num">20+</span>
+            <span class="stat-label">Certificates Earned</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num">3+</span>
+            <span class="stat-label">Years Learning</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-card glass-panel" data-aos="fade-left">
+        <h3>Quick Facts</h3>
+        <ul class="facts-list">
+          <li><i class="fa-solid fa-graduation-cap"></i> B.E. Computer Science Engineering</li>
+          <li><i class="fa-solid fa-code"></i> Full Stack &amp; Java Development</li>
+          <li><i class="fa-solid fa-cloud"></i> Cloud Computing Enthusiast</li>
+          <li><i class="fa-solid fa-location-dot"></i> Open to Internships &amp; Collaboration</li>
+          <li><i class="fa-solid fa-rocket"></i> Always Building Something New</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="section skills-section" id="skills">
+  <div class="section-inner">
+    <p class="section-eyebrow">02 · Systems Onboard</p>
+    <h2 class="section-title">Skills &amp; Tools</h2>
+
+    <div class="skills-grid">
+      <div class="skill-card glass-panel" data-aos="zoom-in" data-aos-delay="0">
+        <i class="fa-brands fa-html5 skill-icon" style="color:#F107A3"></i>
+        <h4>HTML5</h4>
+        <div class="skill-bar"><span style="width:92%"></span></div>
+      </div>
+      <div class="skill-card glass-panel" data-aos="zoom-in" data-aos-delay="60">
+        <i class="fa-brands fa-css3-alt skill-icon" style="color:#3B82F6"></i>
+        <h4>CSS3</h4>
+        <div class="skill-bar"><span style="width:90%"></span></div>
+      </div>
+      <div class="skill-card glass-panel" data-aos="zoom-in" data-aos-delay="120">
+        <i class="fa-brands fa-java skill-icon" style="color:#FFD54F"></i>
+        <h4>Java</h4>
+        <div class="skill-bar"><span style="width:85%"></span></div>
+      </div>
+      <div class="skill-card glass-panel" data-aos="zoom-in" data-aos-delay="180">
+        <i class="fa-brands fa-js skill-icon" style="color:#5EFCE8"></i>
+        <h4>JavaScript</h4>
+        <div class="skill-bar"><span style="width:82%"></span></div>
+      </div>
+      <div class="skill-card glass-panel" data-aos="zoom-in" data-aos-delay="240">
+        <i class="fa-solid fa-c skill-icon" style="color:#7B2FF7"></i>
+        <h4>C</h4>
+        <div class="skill-bar"><span style="width:80%"></span></div>
+      </div>
+      <div class="skill-card glass-panel" data-aos="zoom-in" data-aos-delay="300">
+        <i class="fa-solid fa-plus skill-icon" style="color:#3B82F6"></i>
+        <h4>C++</h4>
+        <div class="skill-bar"><span style="width:78%"></span></div>
+      </div>
+      <div class="skill-card glass-panel" data-aos="zoom-in" data-aos-delay="360">
+        <i class="fa-solid fa-cloud skill-icon" style="color:#5EFCE8"></i>
+        <h4>Cloud Computing</h4>
+        <div class="skill-bar"><span style="width:75%"></span></div>
+      </div>
+      <div class="skill-card glass-panel" data-aos="zoom-in" data-aos-delay="420">
+        <i class="fa-solid fa-database skill-icon" style="color:#FFD54F"></i>
+        <h4>Databases</h4>
+        <div class="skill-bar"><span style="width:76%"></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="section projects-section" id="projects">
+  <div class="section-inner">
+    <p class="section-eyebrow">03 · Mission Archive</p>
+    <h2 class="section-title">Projects</h2>
+
+    <div class="projects-grid">
+      <article class="project-card glass-panel" data-aos="fade-up" data-aos-delay="0">
+        <div class="project-glow"></div>
+        <i class="fa-solid fa-satellite-dish project-icon"></i>
+        <h3>Project Alpha</h3>
+        <p>A full-stack web application built to solve a real campus problem, from database design to a polished front end.</p>
+        <div class="project-tags"><span>Java</span><span>Full Stack</span><span>MySQL</span></div>
+        <a href="#" class="project-link">View Project <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+      </article>
+
+      <article class="project-card glass-panel" data-aos="fade-up" data-aos-delay="100">
+        <div class="project-glow"></div>
+        <i class="fa-solid fa-rocket project-icon"></i>
+        <h3>Project Nova</h3>
+        <p>An interactive, animation-heavy website exploring modern front-end techniques and smooth UI motion.</p>
+        <div class="project-tags"><span>HTML/CSS</span><span>JavaScript</span><span>GSAP</span></div>
+        <a href="#" class="project-link">View Project <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+      </article>
+
+      <article class="project-card glass-panel" data-aos="fade-up" data-aos-delay="200">
+        <div class="project-glow"></div>
+        <i class="fa-solid fa-cloud project-icon"></i>
+        <h3>Project Orbit</h3>
+        <p>A cloud-deployed service exploring scalability, cloud storage, and reliable deployment pipelines.</p>
+        <div class="project-tags"><span>Cloud</span><span>APIs</span><span>C++</span></div>
+        <a href="#" class="project-link">View Project <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section contact-section" id="contact">
+  <div class="section-inner">
+    <p class="section-eyebrow">04 · Transmit a Signal</p>
+    <h2 class="section-title">Get In Touch</h2>
+    <p class="contact-sub">Have a project, an opportunity, or just want to talk tech? My inbox is always open for transmission.</p>
+
+    <div class="contact-grid">
+      <form class="contact-form glass-panel" id="contactForm" data-aos="fade-right">
+        <div class="form-row">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your name" required>
+        </div>
+        <div class="form-row">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" required>
+        </div>
+        <div class="form-row">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Tell me about your idea..." required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary ripple full-width">
+          <i class="fa-solid fa-paper-plane"></i> Send Message
+        </button>
+        <p class="form-status" id="formStatus"></p>
+      </form>
+
+      <div class="contact-info" data-aos="fade-left">
+        <div class="contact-info-card glass-panel">
+          <i class="fa-solid fa-envelope"></i>
+          <div>
+            <h4>Email</h4>
+            <p>mithra.u@example.com</p>
+          </div>
+        </div>
+        <div class="contact-info-card glass-panel">
+          <i class="fa-solid fa-location-dot"></i>
+          <div>
+            <h4>Location</h4>
+            <p>India</p>
+          </div>
+        </div>
+        <div class="contact-info-card glass-panel">
+          <i class="fa-solid fa-paper-plane"></i>
+          <div>
+            <h4>Response Time</h4>
+            <p>Usually within 24 hours</p>
+          </div>
+        </div>
+        <div class="social-icons contact-socials">
+          <a href="#" class="social-icon" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="#" class="social-icon" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" class="social-icon" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <p>&copy; 2026 Mithra U — Exploring the Universe of Code, One Project at a Time.</p>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.1.0/typed.umd.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
